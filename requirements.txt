@@ -1,0 +1,8 @@
+psycopg2
+sqlalchemy
+bs4
+selenium
+scrapy
+scrapyd
+scrapyd-client
+spiderkeeper
