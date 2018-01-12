@@ -1,5 +1,7 @@
 FROM markadams/chromium-xvfb-py3:latest
 
+RUN apt-get update & apt-get install -y psmisc cron
+
 RUN pip3 install --upgrade setuptools pip
 
 RUN pip3 install psycopg2 \ 
@@ -10,6 +12,12 @@ RUN pip3 install psycopg2 \
                  scrapyd \
                  scrapyd-client \
                  spiderkeeper
+
+ADD killchromium /etc/cron.d/killchromium
+
+RUN chmod 0644 /etc/cron.d/killchromium
+
+RUN touch /var/log/cron.txt
 
 RUN mkdir /work
 
