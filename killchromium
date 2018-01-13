@@ -1,1 +1,1 @@
-40 */3 * * * root killall chromium; echo "killed chromium" >> /var/log/cron.txt
+0 */3 * * * root killall chromium; echo "killed chromium" >> /var/log/cron.txt
